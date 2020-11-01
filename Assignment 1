@@ -1,0 +1,197 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs"
+Inherits="project__1.index" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+ <title></title>
+ <style>
+ .formtable{
+ margin-left:400px;
+ margin-top:50px;
+ }
+
+ </style>
+</head>
+<body>
+ <form id="form1" runat="server">
+ <h2 style="margin-left:600px;">Student Registration Form</h2>
+ <asp:Table CssClass="formtable" ID="Tblsform" runat="server" >
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="PreLbl" runat="server" Text="Title"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:DropDownList ID="PreId" runat="server">
+ <asp:ListItem Selected="True">--Select--</asp:ListItem>
+ <asp:ListItem Text="Mr"></asp:ListItem>
+ <asp:ListItem Text="Ms"></asp:ListItem>
+ </asp:DropDownList>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="Lblfname" runat="server" Text="First Name"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:TextBox ID="Txtfname" runat="server"></asp:TextBox>
+ <asp:RequiredFieldValidator ID="Rfvfname" runat="server" ControlToValidate="Txtfname"
+ErrorMessage="Please Provide First Name" ForeColor="Red" >Required</asp:RequiredFieldValidator>
+ </asp:TableCell>
+
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="Lbllname" runat="server" Text="Last Name"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:TextBox ID="Txtlname" runat="server"></asp:TextBox>
+ <asp:RequiredFieldValidator ID="Rfvlname" runat="server" ControlToValidate="Txtlname"
+ErrorMessage="Please Provide Last Name" ForeColor="Red" >Required</asp:RequiredFieldValidator>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="Lbldob" runat="server" Text="Date of Bairth"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:TextBox ID="Txtdob" runat="server" TextMode="Date"></asp:TextBox>
+ <asp:RequiredFieldValidator ID="Rfvdob" runat="server" ControlToValidate="Txtdob"
+ErrorMessage="Please Provide Select DOB" ForeColor="Red" >Required</asp:RequiredFieldValidator>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="lblgender" runat="server" Text="Gender"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:RadioButtonList ID="rblgender" runat="server">
+ <asp:ListItem Selected="True">Male</asp:ListItem>
+ <asp:ListItem>Female</asp:ListItem>
+ </asp:RadioButtonList>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="Lbldegree" runat="server" Text="Degree"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:DropDownList ID="Ddldegree" runat="server">
+ <asp:ListItem Selected="True">--Select--</asp:ListItem>
+ <asp:ListItem Text="MCA"></asp:ListItem>
+ <asp:ListItem Text="Mtech"></asp:ListItem>
+ <asp:ListItem Text="BTech"></asp:ListItem>
+ <asp:ListItem Text="BCA"></asp:ListItem>
+ </asp:DropDownList>
+ <asp:RequiredFieldValidator ID="Rfvddldegree" runat="server"
+ControlToValidate="Ddldegree"
+ ErrorMessage="Value Required!" InitialValue="--Select--"
+ForeColor="Red"></asp:RequiredFieldValidator>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="Lblemail" runat="server" Text="Email"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:TextBox ID="Txtemail" runat="server" TextMode="Email"></asp:TextBox>
+ <asp:RequiredFieldValidator ID="Rfvemail" runat="server" ControlToValidate="Txtemail"
+ErrorMessage="Please Provide Email Address" ForeColor="Red"
+>Required</asp:RequiredFieldValidator>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="Lblpnumber" runat="server" Text="Phone Number"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:TextBox ID="Txtpnumber" runat="server" TextMode="Phone"></asp:TextBox>
+ <asp:RequiredFieldValidator ID="Rfvpnumber" runat="server"
+ControlToValidate="Txtpnumber" ErrorMessage="Please Provide Phone Number" ForeColor="Red"
+>Required</asp:RequiredFieldValidator>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="Lbladdress" runat="server" Text="Address"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:TextBox ID="Txtaddress" runat="server" TextMode="MultiLine"></asp:TextBox>
+ <asp:RequiredFieldValidator ID="Rfvaddress" runat="server" ControlToValidate="Txtaddress"
+ErrorMessage="Please Provide Address" ForeColor="Red" >Required</asp:RequiredFieldValidator>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="Lblcity" runat="server" Text="City"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:TextBox ID="Txtcity" runat="server" ></asp:TextBox>
+ <asp:RequiredFieldValidator ID="Rfvcity" runat="server" ControlToValidate="Txtcity"
+ErrorMessage="Please Provide City Name" ForeColor="Red" >Required</asp:RequiredFieldValidator>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="Lblstate" runat="server" Text="State"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:TextBox ID="Txtstate" runat="server" ></asp:TextBox>
+ <asp:RequiredFieldValidator ID="Rfvstate" runat="server" ControlToValidate="Txtstate"
+ErrorMessage="Please Provide State Name" ForeColor="Red" >Required</asp:RequiredFieldValidator>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="Lblcountry" runat="server" Text="Country"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:TextBox ID="Txtcountry" runat="server"></asp:TextBox>
+ <asp:RequiredFieldValidator ID="Rfvcountry" runat="server" ControlToValidate="Txtcountry"
+ErrorMessage="Please Provide Country Name" ForeColor="Red"
+>Required</asp:RequiredFieldValidator>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="Lblzipcode" runat="server" Text="Zip Code"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:TextBox ID="Txtzipcode" runat="server" TextMode="Number"></asp:TextBox>
+ <asp:RequiredFieldValidator ID="Rfvzipcode" runat="server" ControlToValidate="Txtstate"
+ErrorMessage="Please Provide Zip Code" ForeColor="Red" >Required</asp:RequiredFieldValidator>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="Lblpassword" runat="server" Text="Password"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:TextBox ID="Txtpassword" runat="server" TextMode="Password"></asp:TextBox>
+ <asp:RequiredFieldValidator ID="Rfvpassword" runat="server"
+ControlToValidate="Txtpassword" ErrorMessage="Please Enter Your Password" ForeColor="Red"
+>Required</asp:RequiredFieldValidator>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Label ID="Lblrepassword" runat="server" Text="Re-Password"></asp:Label>
+ </asp:TableCell>
+ <asp:TableCell>
+ <asp:TextBox ID="Txtrepassword" runat="server" TextMode="Password"></asp:TextBox>
+ <asp:RequiredFieldValidator ID="Rfvrepassword" runat="server"
+ControlToValidate="Txtrepassword" ErrorMessage="Please Enter Re-Password" ForeColor="Red"
+>Required</asp:RequiredFieldValidator> 
+ <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Please
+ensure the password and confirm password is same" ControlToValidate="Txtrepassword"
+ControlToCompare="Txtpassword" ForeColor="Red"></asp:CompareValidator>
+ </asp:TableCell>
+ </asp:TableRow>
+ <asp:TableRow>
+ <asp:TableCell>
+ <asp:Button ID="Btnsubmit" runat="server" Text="Submit" CausesValidation="true" />
+ </asp:TableCell>
+ </asp:TableRow>
+ </asp:Table>
+ </form>
+</body>
+</html>
